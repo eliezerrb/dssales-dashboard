@@ -1,0 +1,45 @@
+.sales-table-container {
+  margin-bottom: 50px;
+  padding: 30px 35px;
+}
+
+.sales-table-title {
+  font-size: 18px;
+}
+
+.sales-table {
+  width: 100%;
+  margin-top: 30px;
+  /*Para remover os espaçamentos entre as bordas*/
+  border-spacing: 0;
+}
+
+.sales-table thead th {
+  text-align: left;
+  height: 55px;
+  font-size: 16px;
+}
+
+.sales-table tbody td {
+  height: 55px;
+  border-top: 1px solid var(--grey-light-125-color);
+  font-size: 18px;
+  /*Efeito mais fluido no hover*/
+  transition: background 0.3s;
+}
+
+/*Quando estiver passando o mouse
+tr:hover > (primeiro td) td - em cada celula*/
+.sales-table tbody tr:hover > td {
+  background-color: var(--grey-light-150-color);
+}
+
+/*Toda linha que tiver um elemento filho que for par(even) vai ter outra cor*/
+.sales-table tbody tr:nth-child(even) {
+  background-color: var(--primary-color);
+}
+
+/*Toda linha que tiver um elemento filho que for impar(odd) vai ter outra cor*/
+.sales-table tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
