@@ -1,4 +1,5 @@
 import { ApexOptions } from 'apexcharts';
+import { SalesByDate } from '../../types';
 
 export const chartOptions = {
   legend: {
@@ -50,3 +51,12 @@ export const chartOptions = {
     }
   }
 } as ApexOptions;
+
+// Convertendo o que vem do backend para o apexChart entender
+// Para cada sales eu extraiu a data e o sum e coloco no eixo x e y do obj
+export const buildChartSeries = (salesByDate: SalesByDate[] = []) => {
+  return salesByDate.map(({ date, sum }) => ({
+    x: date,
+    y: sum
+  }));
+};

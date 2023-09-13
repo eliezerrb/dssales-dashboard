@@ -1,43 +1,22 @@
-import { chartOptions } from './helpers';
+import { useEffect, useState } from 'react';
+import { buildChartSeries, chartOptions } from './helpers';
 import './styles.css';
 import ReactApexChart from 'react-apexcharts';
+import { makeRequest } from '../../utils/request';
+import { ChartSeriesData, SalesByDate } from '../../types';
 
-const initialData = [
-  {
-    x: '2020-01-01',
-    y: 45
-  },
-  {
-    x: '2020-01-02',
-    y: 55
-  },
-  {
-    x: '2020-01-03',
-    y: 39
-  },
-  {
-    x: '2020-01-04',
-    y: 25
-  },
-  {
-    x: '2020-01-05',
-    y: 35
-  },
-  {
-    x: '2020-01-06',
-    y: 20
-  },
-  {
-    x: '2020-01-07',
-    y: 50
-  },
-  {
-    x: '2020-01-01',
-    y: 30
-  }
-];
+function SalesByDateComponent() {
+  const [chartSeries, setCharSeries] = useState<ChartSeriesData[]>([]);
 
-function SalesByDate() {
+  useEffect(() => {
+    makeRequest
+      .get<SalesByDate[]>('sales/by-date?minDate=2017-01-01&maxDate=2017-01-31&gender=FEMALE')
+      .then((response) => {
+        const newChartSeries = buildChartSeries(response.data);
+        setCharSeries(newChartSeries);
+      });
+  }, []);
+
   return (
     <div className="sales-by-date-container base-card">
       <div>
@@ -56,7 +35,7 @@ function SalesByDate() {
           {/*options - configurações do gráfico */}
           <ReactApexChart
             options={chartOptions}
-            series={[{ name: 'Vendas', data: initialData }]}
+            series={[{ name: 'Vendas', data: chartSeries }]}
             type="bar"
             height={240}
             width="100%"
@@ -67,4 +46,4 @@ function SalesByDate() {
   );
 }
 
-export default SalesByDate;
+export default SalesByDateComponent;
