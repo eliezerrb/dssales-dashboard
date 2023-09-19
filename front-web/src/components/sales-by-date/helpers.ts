@@ -60,3 +60,12 @@ export const buildChartSeries = (salesByDate: SalesByDate[] = []) => {
     y: sum
   }));
 };
+
+// reduce - compactar os valores em um apenas
+// previusValue - valor anterior ou acumulador
+// currentValue.sum ou atributo sum
+export const sumSalesByDate = (salesByDate: SalesByDate[] = []) => {
+  return salesByDate.reduce((previusValue, currentValue) => {
+    return previusValue + currentValue.sum;
+  }, 0);
+};
