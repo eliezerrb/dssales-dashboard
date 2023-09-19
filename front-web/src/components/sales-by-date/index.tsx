@@ -4,7 +4,7 @@ import './styles.css';
 import ReactApexChart from 'react-apexcharts';
 import { makeRequest } from '../../utils/request';
 import { ChartSeriesData, FilterData, SalesByDate } from '../../types';
-import { formartPrice } from '../../utils/formatters';
+import { formartPrice, formatDate } from '../../utils/formatters';
 
 type Props = {
   filterData?: FilterData;
@@ -22,6 +22,9 @@ function SalesByDateComponent({ filterData }: Props) {
         setCharSeries(newChartSeries);
         const newTotalSum = sumSalesByDate(response.data);
         setTotalSum(newTotalSum);
+      })
+      .catch(() => {
+        console.log('Error to fetch sales by date');
       });
   }, []);
 
@@ -29,7 +32,11 @@ function SalesByDateComponent({ filterData }: Props) {
     <div className="sales-by-date-container base-card">
       <div>
         <h4 className="sales-by-date-title">Evolução das vendas</h4>
-        <span className="sales-by-date-period">{filterData?.dates?.[0].toISOString()}</span>
+        {filterData?.dates && (
+          <span className="sales-by-date-period">
+            {formatDate(filterData?.dates?.[0])} até {formatDate(filterData?.dates?.[1])}
+          </span>
+        )}
       </div>
       <div className="sales-by-date-data">
         <div className="sales-by-date-quantity-container">
