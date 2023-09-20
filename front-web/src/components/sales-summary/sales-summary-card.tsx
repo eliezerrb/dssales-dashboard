@@ -2,16 +2,16 @@ import React from 'react';
 import './styles.css';
 
 type Props = {
-  valeu: number;
+  value: number | string;
   label: string;
   icon: React.ReactNode;
 };
 
-function SalesSummaryCard({ valeu, label, icon }: Props) {
+function SalesSummaryCard({ value, label, icon }: Props) {
   return (
     <div className="sales-sumary-card base-card">
       {icon}
-      <h3 className="sales-sumary-card-value">{valeu}</h3>
+      <h3 className="sales-sumary-card-value">{value}</h3>
       <span className="sales-sumary-card-label">{label}</span>
     </div>
   );
