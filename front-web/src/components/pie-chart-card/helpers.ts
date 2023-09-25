@@ -21,7 +21,7 @@ export const buildPieChartConfig = (labels: string[] = [], name: string) => {
       position: 'bottom',
       offsetY: 0,
       labels: {
-        colors: ['#b4bed2', '#b4bed2', '#b4bed2']
+        colors: ['#b4bed2', '#b4bed2', '#b4bed2', '#b4bed2']
       },
       fontFamily: 'Roboto, sans-serif',
       fontSize: '18px',
