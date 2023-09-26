@@ -10,8 +10,8 @@ export const formartPrice = (price: number) => {
   }).format(price);
 };
 
-export const formatDate = (date: Date) => {
-  return date.toLocaleDateString();
+export const formatDate = (date: Date | string) => {
+  return new Date(date).toLocaleDateString();
 };
 
 export const formatDateToServer = (date?: Date) => {

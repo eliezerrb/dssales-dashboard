@@ -37,3 +37,18 @@ export type PieChartConfig = {
   labels: string[];
   series: number[];
 };
+
+export type SalesResoponse = {
+  content: Sales[];
+};
+
+export type Sales = {
+  id: number;
+  date: string;
+  volume: number;
+  total: number;
+  gender: Gender;
+  categoryName: string;
+  paymentMethod: string;
+  storeName: string;
+};
