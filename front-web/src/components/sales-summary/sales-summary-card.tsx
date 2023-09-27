@@ -9,10 +9,10 @@ type Props = {
 
 function SalesSummaryCard({ value, label, icon }: Props) {
   return (
-    <div className="sales-sumary-card base-card">
+    <div className="sales-summary-card base-card">
       {icon}
-      <h3 className="sales-sumary-card-value">{value}</h3>
-      <span className="sales-sumary-card-label">{label}</span>
+      <h3 className="sales-summary-card-value">{value}</h3>
+      <span className="sales-summary-card-label">{label}</span>
     </div>
   );
 }

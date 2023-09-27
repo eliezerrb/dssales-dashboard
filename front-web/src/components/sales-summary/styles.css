@@ -1,4 +1,4 @@
-.sales-sumary-container {
+.sales-summary-container {
   width: 440px;
   display: flex;
   /* Forçar a quebra de linha */
@@ -6,7 +6,7 @@
   justify-content: space-between;
 }
 
-.sales-sumary-card {
+.sales-summary-card {
   width: 200px;
   height: 200px;
   display: flex;
@@ -15,20 +15,20 @@
   align-items: center;
 }
 
-.sales-sumary-card-value {
+.sales-summary-card-value {
   color: var(--white-color);
   font-size: 24px;
   margin-top: 20px;
   margin-bottom: 5px;
 }
 
-.sales-sumary-card-label {
+.sales-summary-card-label {
   color: var(--grey-light-125-color);
   font-size: 18px;
 }
 
 /* Margim bottom somente para o primeiro e segundo item */
-.sales-sumary-card:nth-of-type(1),
-.sales-sumary-card:nth-of-type(2) {
+.sales-summary-card:nth-of-type(1),
+.sales-summary-card:nth-of-type(2) {
   margin-bottom: 45px;
 }

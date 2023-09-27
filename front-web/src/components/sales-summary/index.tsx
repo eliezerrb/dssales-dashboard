@@ -38,7 +38,7 @@ function SalesSummary({ filterData }: Props) {
   }, [params]);
 
   return (
-    <div className="sales-sumary-container">
+    <div className="sales-summary-container">
       <SalesSummaryCard value={sumary?.avg?.toFixed(2)} label="Média" icon={<DoneIcon />} />
       <SalesSummaryCard value={sumary?.count} label="Quantidade" icon={<SyncIcon />} />
       <SalesSummaryCard value={sumary?.min} label="Mínima" icon={<BarChartIcon />} />
