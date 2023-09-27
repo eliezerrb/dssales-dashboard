@@ -20,6 +20,15 @@
   font-size: 16px;
 }
 
+/*Adicionando espaçamento na primeira coluna (th:first-of-type - na primeira th)*/
+.sales-table thead th:first-of-type {
+  padding-left: 30px;
+}
+
+.sales-table tbody td:first-of-type {
+  padding-left: 30px;
+}
+
 .sales-table tbody td {
   height: 55px;
   border-top: 1px solid var(--grey-light-125-color);
