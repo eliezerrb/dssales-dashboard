@@ -22,6 +22,7 @@ module.exports = {
   ],
   plugins: ['react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
+    '@typescript-eslint/no-unused-vars': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
     'import/no-named-as-default': 0,
